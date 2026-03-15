@@ -257,6 +257,26 @@ document.querySelectorAll('.pricing-card').forEach(card => {
   });
 });
 
+// ============ FAQ ACCORDION ============
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+
+    // Close all other items
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    // Toggle current
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
 // ============ PARALLAX on hero orbs ============
 window.addEventListener('mousemove', (e) => {
   const x = (e.clientX / window.innerWidth - 0.5) * 2;

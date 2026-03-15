@@ -1,0 +1,37 @@
+# AISymmetric CRM - affordabilitycrm.com
+# The #1 AI-First Affordable CRM
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.netlify/
+
+# Sitemaps
+Sitemap: https://affordabilitycrm.com/sitemap.xml
+
+# Crawl-delay (be nice to smaller crawlers)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Allow all major search engines full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /

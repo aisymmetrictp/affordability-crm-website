@@ -1,14 +1,20 @@
 [build]
   publish = "."
 
+# Security & SEO Headers for all pages
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    X-XSS-Protection = "1; mode=block"
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Content-Security-Policy = "upgrade-insecure-requests"
     Cache-Control = "public, max-age=3600"
 
+# Long cache for assets
 [[headers]]
   for = "/*.css"
   [headers.values]
@@ -19,6 +25,36 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# SEO: XML Sitemap proper content type
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=86400"
+
+# SEO: Robots.txt
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=86400"
+
+# Redirects — key pages
 [[redirects]]
   from = "/pricing"
   to = "https://crm.aisymmetricsolutions.com/pricing"
@@ -40,5 +76,42 @@
 [[redirects]]
   from = "/signup"
   to = "https://crm.aisymmetricsolutions.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/login"
+  to = "https://crm.aisymmetricsolutions.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/register"
+  to = "https://crm.aisymmetricsolutions.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/try"
+  to = "https://crm.aisymmetricsolutions.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/free"
+  to = "https://crm.aisymmetricsolutions.com/pricing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/start"
+  to = "https://crm.aisymmetricsolutions.com/pricing"
+  status = 301
+  force = true
+
+# SEO: www to non-www redirect
+[[redirects]]
+  from = "https://www.affordabilitycrm.com/*"
+  to = "https://affordabilitycrm.com/:splat"
   status = 301
   force = true
