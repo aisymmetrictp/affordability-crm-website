@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0A0A0F;
+  position: relative;
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(37, 99, 235, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(249, 115, 22, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(46, 204, 113, 0.15) 0%, transparent 50%);
+}
+.lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image:
+    linear-gradient(90deg, rgba(249,115,22,0.5) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(37,99,235,0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 60px;
+  text-align: center;
+}
+.badge {
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  color: #FB923C;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.title {
+  font-size: 64px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.title .highlight {
+  background: linear-gradient(135deg, #F97316, #FB923C, #F97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {
+  font-size: 28px;
+  color: #94A3B8;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+.features {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #E2E8F0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.feature .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ECC71;
+}
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.price {
+  font-size: 72px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #2ECC71, #27AE60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.price-label {
+  font-size: 24px;
+  color: #64748B;
+  font-weight: 500;
+}
+.brand {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-text {
+  color: #64748B;
+  font-size: 18px;
+}
+.brand-text strong {
+  color: #E2E8F0;
+}
+.url {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  color: #64748B;
+  font-size: 18px;
+}
+.corner-tl, .corner-br {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(249, 115, 22, 0.3);
+}
+.corner-tl {
+  top: 20px;
+  left: 20px;
+  border-right: none;
+  border-bottom: none;
+}
+.corner-br {
+  bottom: 20px;
+  right: 20px;
+  border-left: none;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="lines"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="content">
+    <div class="badge">AI-First CRM &bull; Built From The Ground Up</div>
+    <h1 class="title">AISymmetric <span class="highlight">CRM</span></h1>
+    <p class="subtitle">The #1 AI-First Affordable CRM</p>
+    <div class="price-row">
+      <span class="price">$12</span>
+      <span class="price-label">/user/month &bull; Free forever for small teams</span>
+    </div>
+    <div class="features">
+      <div class="feature"><span class="dot"></span> AI Assistant</div>
+      <div class="feature"><span class="dot"></span> 5 Self-Healing Agents</div>
+      <div class="feature"><span class="dot"></span> 15 Industry Templates</div>
+      <div class="feature"><span class="dot"></span> Unlimited Pipelines</div>
+    </div>
+  </div>
+  <div class="brand">
+    <span class="brand-text">Built by <strong>AISymmetric Solutions</strong></span>
+  </div>
+  <div class="url">affordabilitycrm.com</div>
+</body>
+</html>
